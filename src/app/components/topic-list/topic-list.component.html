@@ -1,0 +1,19 @@
+<h2>Tematy do nauki</h2>
+
+<div class="filters">
+  <button (click)="setFilter('all')">Wszystkie</button>
+  <button (click)="setFilter('unmastered')">Do nauki</button>
+  <button (click)="setFilter('mastered')">Opanowane</button>
+</div>
+
+<ul>
+  <li *ngFor="let topic of topics()">
+    <h3>{{ topic.subject }} – {{ topic.title }}</h3>
+    <p>{{ topic.description }}</p>
+    <p>Status: <strong>{{ topic.mastered ? 'Opanowane' : 'Do nauki' }}</strong></p>
+    <div class="actions">
+        <button (click)="toggleMastered(topic.id)">Przełącz status</button>
+        <button (click)="removeTopic(topic.id)">Usuń</button>
+    </div>
+  </li>
+</ul>

@@ -1,0 +1,7 @@
+<h2>Dodaj temat</h2>
+<form (ngSubmit)="addTopic()" #form="ngForm">
+  <input type="text" placeholder="Przedmiot" [(ngModel)]="subject" name="subject" required />
+  <input type="text" placeholder="Temat" [(ngModel)]="title" name="title" required />
+  <textarea placeholder="Opis" [(ngModel)]="description" name="description"></textarea>
+  <button type="submit" [disabled]="!form.form.valid">Dodaj</button>
+</form>

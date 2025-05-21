@@ -1,11 +1,14 @@
 import { Component } from '@angular/core';
+import { TopicFormComponent } from './components/topic-form/topic-form.component';
+import { TopicListComponent } from './components/topic-list/topic-list.component';
 
 @Component({
   selector: 'app-root',
-  imports: [],
+  standalone: true,
+  imports: [TopicFormComponent, TopicListComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'study-planner';
+  title = 'Study Planner';
 }
